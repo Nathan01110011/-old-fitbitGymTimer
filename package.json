@@ -1,0 +1,29 @@
+{
+  "fitbit": {
+    "appUUID": "bb940e19-5b98-4d6e-8ecc-bc199375230e",
+    "appType": "app",
+    "appDisplayName": "Gym Timer",
+    "iconFile": "resources/icon.png",
+    "wipeColor": "#3f51b5",
+    "requestedPermissions": [
+      "run_background"
+    ],
+    "buildTargets": [
+      "meson"
+    ],
+    "i18n": {
+      "en": {
+        "name": "Gym Timer"
+      }
+    }
+  },
+  "devDependencies": {
+    "@fitbit/sdk": "^3.0.0"
+  },
+  "dependencies": {
+    "@fitbit/sdk-cli": "^1.5.0"
+  },
+  "scripts": {
+    "build": "fitbit-build"
+  }
+}

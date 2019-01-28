@@ -1,0 +1,51 @@
+.background {
+  viewport-fill: black;
+}
+
+#currentTime {
+  font-size: 60;
+  font-family: Colfax-Black;
+  text-length: 32;
+  x: 4%;
+  y: 95%;
+  fill: white;
+}
+
+#timer {
+  font-size: 50;
+  font-family: Colfax-Medium;
+  text-length: 32;
+  text-anchor: middle;
+  x: 50%;
+  y: 55%;
+  fill: royalblue;
+}
+
+#counter {
+  font-size: 25;
+  font-family: Colfax-Medium;
+  text-length: 32;
+  x: 3%;
+  y: 10%;
+  fill: royalblue;
+}
+
+#resetText {
+  font-size: 20;
+  font-family: Colfax-Medium;
+  text-length: 32;
+  text-anchor: middle;
+  x: 90%;
+  y: 29%;
+  fill: red;
+}
+
+#startText {
+  font-size: 20;
+  font-family: Colfax-Medium;
+  text-length: 32;
+  text-anchor: middle;
+  x: 90%;
+  y: 75%;
+  fill: green;
+}

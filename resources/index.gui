@@ -1,0 +1,27 @@
+<svg class="background">
+<gradientRect x="0" y="0" width="300" height="300"
+    gradient-type="bilinear"
+    gradient-x1="30" gradient-y1="30"
+    gradient-x2="100%-60" gradient-y2="100%-60"
+    gradient-color1="#3a3a3a"
+    gradient-color2="#303030"
+    gradient-color3="#3a3a3a"
+    gradient-color4="#303030" />
+  <text id="currentTime" />
+  <text id="timer" />
+  <text id="counter" />
+  <text id="resetText">Reset</text>
+  <text id="startText">Start</text>
+  <arc id="circ" x="25%" y="25%" width="150" height="150" fill="royalblue" arc-width="10" start-angle="0" sweep-angle="360" display="none" />
+  <!-- TOP RIGHT -->
+  <use id="btn-tr" href="#combo-button-upper-right" fill="fb-red">
+    <set href="combo-button-icon" attributeName="href" to="x.png"/>
+    <set href="combo-button-icon-press" attributeName="href" to="x_press.png"/>
+    <set href="combo-button-stroke" attributeName="display" to="inline"/>
+  </use>
+  <use id="btn-br" href="#combo-button-lower-right" fill="green">
+    <set href="combo-button-icon" attributeName="href" to="play.png"/>
+    <set href="combo-button-icon-press" attributeName="href" to="play_press.png"/>
+    <set href="combo-button-stroke" attributeName="display" to="inline"/>
+  </use>
+</svg>
