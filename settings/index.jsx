@@ -9,7 +9,8 @@ function mySettings(props) {
           options={[
             {name:"60"},
             {name:"120"},
-            {name:"300"}
+            {name:"300"},
+            {name:"3"}
           ]}
         />
       </Section>
