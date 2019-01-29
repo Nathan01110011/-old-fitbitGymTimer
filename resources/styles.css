@@ -18,7 +18,7 @@
   text-anchor: middle;
   x: 50%;
   y: 55%;
-  fill: royalblue;
+  fill: white;
 }
 
 #counter {
@@ -27,7 +27,7 @@
   text-length: 32;
   x: 3%;
   y: 10%;
-  fill: royalblue;
+  fill: white;
 }
 
 #resetText {

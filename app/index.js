@@ -76,12 +76,15 @@ clock.granularity = "seconds";
 
 
 // Get a handle on the <text> element
+
+const currentTimeStroke = document.getElementById("currentTimeStroke");
 const currentTime = document.getElementById("currentTime");
 const timer = document.getElementById("timer");
 const counter = document.getElementById("counter");
 const reset = document.getElementById("resetText");
 const start = document.getElementById("startText");
 const circle = document.getElementById("circ");
+const circleBack = document.getElementById("circBack");
 timer.text = 'Get Ready';
 let counterCycle = 0;
 counter.text = "Sets: "+counterCycle;
@@ -100,6 +103,7 @@ btnBR.onactivate = function(evt) {
     timer.text = "Get Ready";
     circle.sweepAngle = 360;
     circle.style.display = "none";
+    circleBack.style.display = "none";
 
   } else {
     active = true;
@@ -109,6 +113,7 @@ btnBR.onactivate = function(evt) {
     counter.text = "Sets: "+counterCycle;
     console.log("Counter Added, Count "+counterCycle)
     circle.style.display = "inline";
+    circleBack.style.display = "inline";
   }
 
 }
@@ -124,6 +129,7 @@ btnTR.onactivate = function(evt) {
     timer.text = "Get Ready";
     circle.sweepAngle = 360;
     circle.style.display = "none";
+    circleBack.style.display = "none";
 }
 
 loadSettings();
@@ -142,6 +148,7 @@ clock.ontick = (evt) => {
   }
   let mins = util.zeroPad(today.getMinutes());
   currentTime.text = `${hours}:${mins}`;
+  //currentTimeStroke.text = currentTime.text.charAt(0);
 
   if (active == true && timer.text != '0') {
     timer.text = timer.text - 1;
@@ -156,6 +163,7 @@ console.log(circle.sweepAngle);
       timer.text = "Start Set";
       circle.style.display = "none";
       circle.sweepAngle = 360;
+      circleBack.style.display = "none";
     }
   }
 
