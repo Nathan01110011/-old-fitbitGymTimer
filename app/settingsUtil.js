@@ -1,10 +1,16 @@
 import { inbox } from "file-transfer";
 import { readFileSync } from "fs";
 import * as cbor from 'cbor';
+import document from 'document';
 
 let defaultSettings = {
-  timerValue: "60"
+  timerValue: "60",
+  wallpaper: "blue.png"
 };
+
+let blueWallpaper = document.getElementById("blueWallpaper");
+let blackWallpaper = document.getElementById("blackWallpaper");
+let redWallpaper = document.getElementById("redWallpaper");
 
 export let settings = defaultSettings;
 inbox.onnewfile = processInbox;
@@ -20,12 +26,23 @@ export const loadSettings = () => {
     settings = defaultSettings;
   }
   console.log('Applying settings: ' + JSON.stringify(settings));
-  //applySettings();
+  applySettings();
 }
 
-/*function applySettings() {
+function applySettings() {
 
-}*/
+  blueWallpaper.style.visibility = "hidden";
+  blackWallpaper.style.visibility = "hidden";
+  redWallpaper.style.visibility = "hidden";
+
+let wallpaperNum = settings.wallpaperValue.selected;
+if (wallpaperNum == 0){
+  blueWallpaper.style.visibility = "visible";
+} else if (wallpaperNum == 1){
+  blackWallpaper.style.visibility = "visible";
+} else if (wallpaperNum == 2)
+redWallpaper.style.visibility = "visible";
+}
 
 function mergeWithDefaultSettings() {
   for (let key in defaultSettings) {

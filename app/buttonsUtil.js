@@ -4,29 +4,28 @@ import { loadSettings, settings } from "./settingsUtil";
 import { vibration } from "haptics";
 
 //export const loadSettings = () => {
-
+export let btnBR = document.getElementById("btn-br");
+export let btnTR = document.getElementById("btn-tr");
 export const timer = document.getElementById("timer");
+export const active = false;
+
 const counter = document.getElementById("counter");
 const reset = document.getElementById("resetText");
 const start = document.getElementById("startText");
 const circle = document.getElementById("circ");
 const circleBack = document.getElementById("circBack");
 
-
+let counterCycle = 0;
 reset.style.display = "none";
 timer.text = 'Get Ready';
-let counterCycle = 0;
 counter.text = "Sets: "+counterCycle;
-export const active = false;
-
-export let btnBR = document.getElementById("btn-br");
-export let btnTR = document.getElementById("btn-tr");
+btnTR.style.display = "none";
 
 loadSettings();
 
 export const btnBrAction = () => {
 
-  console.log("Bottom RIGHT!");
+  console.log("BR");
 
   if (active == true){
     active = false;
@@ -51,7 +50,7 @@ export const btnBrAction = () => {
 }
 
 export const btnTrAction = () => {
-  console.log("Top RIGHT!");
+  console.log("TR!");
   active = false;
   counterCycle = 0;
   counter.text = "Sets: "+counterCycle;

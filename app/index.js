@@ -6,7 +6,6 @@ import * as buttons from "../common/buttons";
 import { display } from "display";
 import * as buttonsUtil from "./buttonsUtil";
 
-
 //Keep display on
 display.autoOff = false;
 
@@ -14,24 +13,16 @@ display.autoOff = false;
 clock.granularity = "seconds";
 
 // Get a handle on the <text> element
-
 const currentTime = document.getElementById("currentTime");
 
-buttonsUtil.btnTR.style.display = "none";
-
-//Bottom right button Function
-
+//Execution of buttons
 buttonsUtil.btnBR.onactivate = function(evt) {
-
-buttonsUtil.btnBrAction();
+  buttonsUtil.btnBrAction();
 }
 
 buttonsUtil.btnTR.onactivate = function(evt) {
-
   buttonsUtil.btnTrAction();
 }
-
-
 
 // Update the <text> element every tick with the current time
 clock.ontick = (evt) => {
@@ -46,19 +37,12 @@ clock.ontick = (evt) => {
   }
   let mins = util.zeroPad(today.getMinutes());
   currentTime.text = `${hours}:${mins}`;
-  //currentTimeStroke.text = currentTime.text.charAt(0);
 
   if (buttonsUtil.active == true && buttonsUtil.timer.text != '0') {
-
     buttonsUtil.test2();
 
-
     if (buttonsUtil.timer.text == 0){
-
-buttonsUtil.test();
-
+      buttonsUtil.test();
     }
   }
-
-
 }
