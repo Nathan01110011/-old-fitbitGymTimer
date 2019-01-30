@@ -16,12 +16,20 @@ clock.granularity = "seconds";
 const currentTime = document.getElementById("currentTime");
 
 //Execution of buttons
-buttonsUtil.btnBR.onactivate = function(evt) {
-  buttonsUtil.btnBrAction();
+buttonsUtil.btnPlay.onactivate = function(evt) {
+  buttonsUtil.btnBottomRight();
 }
 
-buttonsUtil.btnTR.onactivate = function(evt) {
-  buttonsUtil.btnTrAction();
+buttonsUtil.btnReset.onactivate = function(evt) {
+  buttonsUtil.btnTopTight();
+}
+
+buttonsUtil.btnSkip.onactivate = function(evt) {
+  buttonsUtil.btnTopTight();
+}
+
+buttonsUtil.btnPause.onactivate = function(evt) {
+  buttonsUtil.btnBottomRight();
 }
 
 // Update the <text> element every tick with the current time

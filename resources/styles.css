@@ -30,7 +30,7 @@
   fill: white;
 }
 
-#resetText {
+#textTR {
   font-size: 20;
   font-family: Colfax-Medium;
   text-length: 32;
@@ -40,7 +40,7 @@
   fill: red;
 }
 
-#startText {
+#textBR {
   font-size: 20;
   font-family: Colfax-Medium;
   text-length: 32;

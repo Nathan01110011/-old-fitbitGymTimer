@@ -10,7 +10,8 @@ function mySettings(props) {
             {name:"60"},
             {name:"120"},
             {name:"300"},
-            {name:"3"}
+            {name:"3"},
+            {name:"10"}
           ]}
         />
         <Select
@@ -19,7 +20,8 @@ function mySettings(props) {
           options={[
             {name:"Blue Lines"},
             {name:"Carbon Fiber"},
-            {name:"Red Triangles"}
+            {name:"Red Triangles"},
+            {name:"Black"}
           ]}
         />
       </Section>

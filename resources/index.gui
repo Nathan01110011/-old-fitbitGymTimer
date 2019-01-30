@@ -5,19 +5,33 @@
   <text id="currentTime" />
   <text id="timer" />
   <text id="counter" />
-  <text id="resetText">Reset</text>
-  <text id="startText">Start</text>
+  <text id="textTR">Reset</text>
+  <text id="textBR">Start</text>
   <arc id="circBack" x="25%" y="25%" width="150" height="150" fill="#404040" arc-width="10" start-angle="0" sweep-angle="360" display="none" />
   <arc id="circ" x="25%" y="25%" width="150" height="150" fill="royalblue" arc-width="10" start-angle="0" sweep-angle="360" display="none" />
+
   <!-- TOP RIGHT -->
-  <use id="btn-tr" href="#combo-button-upper-right" fill="fb-red">
-    <set href="combo-button-icon" attributeName="href" to="x.png"/>
-    <set href="combo-button-icon-press" attributeName="href" to="x_press.png"/>
+  <use id="btn-reset" href="#combo-button-upper-right" fill="fb-red">
+    <set href="combo-button-icon" attributeName="href" to="icons/x.png"/>
+    <set href="combo-button-icon-press" attributeName="href" to="icons/x_press.png"/>
     <set href="combo-button-stroke" attributeName="display" to="inline"/>
   </use>
-  <use id="btn-br" href="#combo-button-lower-right" fill="green">
-    <set href="combo-button-icon" attributeName="href" to="play.png"/>
-    <set href="combo-button-icon-press" attributeName="href" to="play_press.png"/>
+  <use id="btn-skip" href="#combo-button-upper-right" fill="royalblue" display="none">
+    <set href="combo-button-icon" attributeName="href" to="icons/skip.png"/>
+    <set href="combo-button-icon-press" attributeName="href" to="icons/skip_press.png"/>
+    <set href="combo-button-stroke" attributeName="display" to="inline"/>
+  </use>
+
+
+  <!-- BOTTOM RIGHT -->
+  <use id="btn-play" href="#combo-button-lower-right" fill="green">
+    <set href="combo-button-icon" attributeName="href" to="icons/play.png"/>
+    <set href="combo-button-icon-press" attributeName="href" to="icons/play_press.png"/>
+    <set href="combo-button-stroke" attributeName="display" to="inline"/>
+  </use>
+  <use id="btn-pause" href="#combo-button-lower-right" fill="green" display="none">
+    <set href="combo-button-icon" attributeName="href" to="icons/pause.png"/>
+    <set href="combo-button-icon-press" attributeName="href" to="icons/pause_press.png"/>
     <set href="combo-button-stroke" attributeName="display" to="inline"/>
   </use>
 </svg>

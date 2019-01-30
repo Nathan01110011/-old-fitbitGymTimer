@@ -5,7 +5,7 @@ import document from 'document';
 
 let defaultSettings = {
   timerValue: "60",
-  wallpaper: "blue.png"
+  wallpaperValue: 0
 };
 
 let blueWallpaper = document.getElementById("blueWallpaper");
@@ -35,13 +35,16 @@ function applySettings() {
   blackWallpaper.style.visibility = "hidden";
   redWallpaper.style.visibility = "hidden";
 
-let wallpaperNum = settings.wallpaperValue.selected;
-if (wallpaperNum == 0){
-  blueWallpaper.style.visibility = "visible";
-} else if (wallpaperNum == 1){
-  blackWallpaper.style.visibility = "visible";
-} else if (wallpaperNum == 2)
-redWallpaper.style.visibility = "visible";
+  let wallpaperNum = settings.wallpaperValue.selected;
+console.log(wallpaperNum);
+  if (wallpaperNum == 0){
+    blueWallpaper.style.visibility = "visible";
+  } else if (wallpaperNum == 1){
+    blackWallpaper.style.visibility = "visible";
+  } else if (wallpaperNum == 2){
+    redWallpaper.style.visibility = "visible";
+  } else if (wallpaperNum == 3){
+  }
 }
 
 function mergeWithDefaultSettings() {
@@ -64,7 +67,7 @@ function processInbox() {
   while (fileName = inbox.nextFile()) {
     console.log("File received: " + fileName);
     if (fileName === 'settings.cbor') {
-        loadSettings();
+      loadSettings();
     }
   }
 };
