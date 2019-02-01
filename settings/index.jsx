@@ -1,6 +1,22 @@
 function mySettings(props) {
   return (
     <Page>
+
+    <Section
+    title={<Text bold align="center">Color Settings</Text>}>
+    <ColorSelect
+    label={`Colour`}
+      settingsKey="backgroundColor"
+      colors={[
+        {color: '#000000', value: '1'},
+        {color: '#943126', value: '2'},
+        {color: '#B7950B', value: '3'},
+        {color: '#196F3D', value: '4'},
+        {color: '#17A589', value: '5'},
+        {color: '#1B4F72', value: '6'}
+      ]}
+    />
+  </Section>
       <Section
         title={<Text bold align="center">Timer Settings</Text>}>
         <Select
@@ -10,21 +26,11 @@ function mySettings(props) {
             {name:"60"},
             {name:"120"},
             {name:"300"},
-            {name:"3"},
-            {name:"10"}
+            {name: "5"}
           ]}
         />
-        <Select
-          label={`Wallpaper Design`}
-          settingsKey="wallpaperValue"
-          options={[
-            {name:"Blue Lines"},
-            {name:"Carbon Fiber"},
-            {name:"Red Triangles"},
-            {name:"Black"}
-          ]}
-        />
-      </Section>
+        </Section>
+
     </Page>);
 }
 

@@ -5,10 +5,12 @@ import * as util from "../common/utils";
 import * as buttons from "../common/buttons";
 import { display } from "display";
 import * as buttonsUtil from "./buttonsUtil";
+import { settings } from "./settingsUtil";
 
-//Keep display on
+//Display content
 display.autoOff = false;
-
+let displayTimer = 0;
+let settingsCheck = settings.timerValue;
 // Update the clock every second
 clock.granularity = "seconds";
 
@@ -17,23 +19,32 @@ const currentTime = document.getElementById("currentTime");
 
 //Execution of buttons
 buttonsUtil.btnPlay.onactivate = function(evt) {
+
   buttonsUtil.btnBottomRight();
+  displayTimer = 0;
 }
 
 buttonsUtil.btnReset.onactivate = function(evt) {
   buttonsUtil.btnTopTight();
+  displayTimer = 0;
 }
 
 buttonsUtil.btnSkip.onactivate = function(evt) {
   buttonsUtil.btnTopTight();
+  displayTimer = 0;
 }
 
 buttonsUtil.btnPause.onactivate = function(evt) {
   buttonsUtil.btnBottomRight();
+  displayTimer = 0;
 }
 
 // Update the <text> element every tick with the current time
 clock.ontick = (evt) => {
+
+  displayTimer = displayTimer + 1;
+  //console.log(displayTimer);
+
   let today = evt.date;
   let hours = today.getHours();
   if (preferences.clockDisplay === "12h") {
@@ -47,10 +58,21 @@ clock.ontick = (evt) => {
   currentTime.text = `${hours}:${mins}`;
 
   if (buttonsUtil.active == true && buttonsUtil.timer.text != '0') {
-    buttonsUtil.test2();
+    buttonsUtil.timerCountdown();
 
     if (buttonsUtil.timer.text == 0){
-      buttonsUtil.test();
+      buttonsUtil.timerComplete();
     }
   }
+//console.log("Timer Setting - "+settings.timerValue);
+  if (displayTimer > ((settings.timerValue)+10)) {
+    displayTimer = 0;
+    display.on = false;
+  }
+
+  if (settingsCheck != settings.timerValue) {
+    buttonsUtil.resetTimer();
+    settingsCheck = settings.timerValue;
+  }
+
 }

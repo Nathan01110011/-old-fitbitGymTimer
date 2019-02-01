@@ -1,14 +1,24 @@
 <svg class="background">
-  <image id="blueWallpaper" href="blue.png" width="100%" height="100%" visibility="hidden"/>
-  <image id="blackWallpaper" href="carbon.png" width="100%" height="100%" visibility="hidden"/>
-  <image id="redWallpaper" href="redtriangles.png" width="100%" height="100%" visibility="hidden"/>
+
+  <!-- Background -->
+  <gradientRect id="backgroundColor" x="0" y="0" width="300" height="300"
+    gradient-type="bilinear"
+    gradient-x1="50" gradient-y1="50"
+    gradient-x2="250" gradient-y2="250"
+    gradient-color1="#000000"
+    gradient-color2="#000000"
+    gradient-color3="#000000"
+    gradient-color4="#000000" />
   <text id="currentTime" />
-  <text id="timer" />
+
   <text id="counter" />
   <text id="textTR">Reset</text>
   <text id="textBR">Start</text>
+
+  <!--TIMER -->
+  <text id="timer" />
   <arc id="circBack" x="25%" y="25%" width="150" height="150" fill="#404040" arc-width="10" start-angle="0" sweep-angle="360" display="none" />
-  <arc id="circ" x="25%" y="25%" width="150" height="150" fill="royalblue" arc-width="10" start-angle="0" sweep-angle="360" display="none" />
+  <arc id="circ" x="25%" y="25%" width="150" height="150" fill="#0B5345" arc-width="10" start-angle="0" sweep-angle="360" display="none" />
 
   <!-- TOP RIGHT -->
   <use id="btn-reset" href="#combo-button-upper-right" fill="fb-red">
