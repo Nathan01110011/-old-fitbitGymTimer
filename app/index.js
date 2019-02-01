@@ -43,7 +43,7 @@ buttonsUtil.btnPause.onactivate = function(evt) {
 clock.ontick = (evt) => {
 
   displayTimer = displayTimer + 1;
-  //console.log(displayTimer);
+  console.log(displayTimer);
 
   let today = evt.date;
   let hours = today.getHours();
@@ -64,8 +64,8 @@ clock.ontick = (evt) => {
       buttonsUtil.timerComplete();
     }
   }
-//console.log("Timer Setting - "+settings.timerValue);
-  if (displayTimer > ((settings.timerValue)+10)) {
+console.log("Timer Value - "+settings.timerValue + " countdown " +displayTimer);
+  if (displayTimer > settings.timerValue) {
     displayTimer = 0;
     display.on = false;
   }
@@ -73,6 +73,7 @@ clock.ontick = (evt) => {
   if (settingsCheck != settings.timerValue) {
     buttonsUtil.resetTimer();
     settingsCheck = settings.timerValue;
+    displayTimer = 0;
   }
 
 }
