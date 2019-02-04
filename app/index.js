@@ -10,7 +10,8 @@ import { settings } from "./settingsUtil";
 //Display content
 display.autoOff = false;
 let displayTimer = 0;
-let settingsCheck = settings.timerValue;
+let settingsCheck = parseInt(settings.timerValue);
+let displayOffTime;
 // Update the clock every second
 clock.granularity = "seconds";
 
@@ -42,6 +43,7 @@ buttonsUtil.btnPause.onactivate = function(evt) {
 // Update the <text> element every tick with the current time
 clock.ontick = (evt) => {
 
+  displayOffTime = settingsCheck + 10;
   displayTimer = displayTimer + 1;
   console.log(displayTimer);
 
@@ -58,22 +60,21 @@ clock.ontick = (evt) => {
   currentTime.text = `${hours}:${mins}`;
 
   if (buttonsUtil.active == true && buttonsUtil.timer.text != '0') {
+
     buttonsUtil.timerCountdown();
 
     if (buttonsUtil.timer.text == 0){
       buttonsUtil.timerComplete();
     }
   }
-console.log("Timer Value - "+settings.timerValue + " countdown " +displayTimer);
-  if (displayTimer > settings.timerValue) {
+
+  if (settingsCheck != parseInt(settings.timerValue)) {
+    displayTimer = 0;
+    buttonsUtil.resetTimer();
+    settingsCheck = parseInt(settings.timerValue);
+  } else if (displayTimer >= displayOffTime) {
     displayTimer = 0;
     display.on = false;
-  }
-
-  if (settingsCheck != settings.timerValue) {
-    buttonsUtil.resetTimer();
-    settingsCheck = settings.timerValue;
-    displayTimer = 0;
   }
 
 }

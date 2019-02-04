@@ -54,7 +54,9 @@ export const timerComplete = () => {
 
 export const timerCountdown = () => {
   timer.text = timer.text - 1;
+
   circle.sweepAngle = (timer.text/(settings.timerValue))*360;
+
 }
 
 function startTimer() {
