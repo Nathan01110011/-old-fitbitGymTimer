@@ -3,11 +3,11 @@
 }
 
 #currentTime {
-  font-size: 55;
+  font-size: 60;
   font-family: Colfax-Black;
   text-length: 32;
-  x: 3%;
-  y: 96%;
+  x: 4%;
+  y: 95%;
   fill: white;
 }
 
@@ -35,8 +35,8 @@
   font-family: Colfax-Medium;
   text-length: 32;
   text-anchor: middle;
-  x: 91%;
-  y: 35%;
+  x: 90%;
+  y: 29%;
   fill: red;
 }
 
@@ -45,14 +45,14 @@
   font-family: Colfax-Medium;
   text-length: 32;
   text-anchor: middle;
-  x: 91%;
-  y: 70%;
+  x: 90%;
+  y: 75%;
   fill: green;
 }
 
 #circBack {
-  x: 28%;
-  y: 18%;
+  x: 25%;
+  y: 25%;
   start-angle: 0;
   sweep-angle: 360;
   width: 150;
@@ -61,8 +61,8 @@
 }
 
 #circ {
-  x: 28%;
-  y: 18%;
+  x: 25%;
+  y: 25%;
   start-angle: 0;
   sweep-angle: 360;
   width: 150;

@@ -18,70 +18,60 @@ const textBR = document.getElementById("textBR");
 const circle = document.getElementById("circ");
 const circleBack = document.getElementById("circBack");
 
-
 let counterCycle = 0;
 textTR.style.display = "none";
-timer.text = 'Get Ready';
-counter.text = "Sets: "+counterCycle;
+timer.text = "Get Ready";
+counter.text = "Sets: " + counterCycle;
 btnReset.style.display = "none";
 
 loadSettings();
 resetTimer();
 
 export const btnBottomRight = () => {
-
-  if (active == true){
+  if (active == true) {
     pauseTimer();
-
   } else {
     startTimer();
   }
-}
+};
 
 export const btnTopTight = () => {
-
-  if (active == false){
+  if (active == false) {
     resetTimer();
   } else {
     restFinish();
   }
-}
+};
 
 export const timerComplete = () => {
   vibration.start("nudge-max");
   restFinish();
-}
+};
 
 export const timerCountdown = () => {
   timer.text = timer.text - 1;
 
-  circle.sweepAngle = (timer.text/(settings.timerValue))*360;
-
-}
+  circle.sweepAngle = (timer.text / settings.timerValue) * 360;
+};
 
 function startTimer() {
-
   buttonsPauseSkip();
 
   if (timer.text == "Get Ready" || timer.text == "Start Set") {
-
     active = true;
     timer.text = settings.timerValue;
     counterCycle++;
-    counter.text = "Sets: "+counterCycle;
+    counter.text = "Sets: " + counterCycle;
     circle.style.display = "inline";
     circleBack.style.display = "inline";
 
     buttonsPauseSkip();
-
   } else {
     active = true;
   }
 }
 
-
 function pauseTimer() {
-
   active = false;
   buttonsStartReset();
 }
@@ -89,7 +79,7 @@ function pauseTimer() {
 export function resetTimer() {
   active = false;
   counterCycle = 0;
-  counter.text = "Sets: "+counterCycle;
+  counter.text = "Sets: " + counterCycle;
   timer.text = "Get Ready";
   circle.sweepAngle = 360;
   circle.style.display = "none";
@@ -99,11 +89,9 @@ export function resetTimer() {
   buttonsStartReset();
 
   console.log("Reset Triggered");
-
 }
 
 function buttonsStartReset() {
-
   textTR.style.display = "inline";
   textBR.text = "Start";
   textTR.text = "Reset";
@@ -115,17 +103,14 @@ function buttonsStartReset() {
   circle.style.fill = "fb-extra-dark-gray";
   timer.style.fill = "fb-extra-dark-gray";
 
-  if (timer.text == "Get Ready"){
+  if (timer.text == "Get Ready") {
     btnReset.style.display = "none";
     textTR.style.display = "none";
     timer.style.fill = "white";
   }
-
 }
 
 function buttonsPauseSkip() {
-
-
   textTR.style.display = "inline";
   textTR.text = "Skip";
   textTR.style.fill = "royalblue";
@@ -136,11 +121,9 @@ function buttonsPauseSkip() {
   btnPause.style.display = "inline";
   circle.style.fill = "royalblue";
   timer.style.fill = "white";
-
 }
 
 function restFinish() {
-
   buttonsStartReset();
   active = false;
   timer.text = "Start Set";

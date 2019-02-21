@@ -20,29 +20,27 @@ const currentTime = document.getElementById("currentTime");
 
 //Execution of buttons
 buttonsUtil.btnPlay.onactivate = function(evt) {
-
   buttonsUtil.btnBottomRight();
   displayTimer = 0;
-}
+};
 
 buttonsUtil.btnReset.onactivate = function(evt) {
   buttonsUtil.btnTopTight();
   displayTimer = 0;
-}
+};
 
 buttonsUtil.btnSkip.onactivate = function(evt) {
   buttonsUtil.btnTopTight();
   displayTimer = 0;
-}
+};
 
 buttonsUtil.btnPause.onactivate = function(evt) {
   buttonsUtil.btnBottomRight();
   displayTimer = 0;
-}
+};
 
 // Update the <text> element every tick with the current time
-clock.ontick = (evt) => {
-
+clock.ontick = evt => {
   displayOffTime = settingsCheck + 10;
   displayTimer = displayTimer + 1;
   console.log(displayTimer);
@@ -59,22 +57,22 @@ clock.ontick = (evt) => {
   let mins = util.zeroPad(today.getMinutes());
   currentTime.text = `${hours}:${mins}`;
 
-  if (buttonsUtil.active == true && buttonsUtil.timer.text != '0') {
-
+  if (buttonsUtil.active == true && buttonsUtil.timer.text != "0") {
     buttonsUtil.timerCountdown();
 
-    if (buttonsUtil.timer.text == 0){
+    if (buttonsUtil.timer.text == 0) {
       buttonsUtil.timerComplete();
     }
   }
 
-  if (settingsCheck != parseInt(settings.timerValue)) {
-    displayTimer = 0;
-    buttonsUtil.resetTimer();
-    settingsCheck = parseInt(settings.timerValue);
-  } else if (displayTimer >= displayOffTime) {
-    displayTimer = 0;
-    display.on = false;
+  if (buttonsUtil.active == false) {
+    if (settingsCheck != parseInt(settings.timerValue)) {
+      displayTimer = 0;
+      buttonsUtil.resetTimer();
+      settingsCheck = parseInt(settings.timerValue);
+    } else if (displayTimer >= displayOffTime) {
+      displayTimer = 0;
+      display.on = false;
+    }
   }
-
-}
+};
