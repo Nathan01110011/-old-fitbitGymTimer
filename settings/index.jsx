@@ -23,6 +23,7 @@ function mySettings(props) {
           label={`Timer Value`}
           settingsKey="timerValue"
           options={[
+            {name:"30"},
             {name:"60"},
             {name:"120"},
             {name:"300"}
